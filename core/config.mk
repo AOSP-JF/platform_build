@@ -627,6 +627,6 @@ RS_PREBUILT_COMPILER_RT := prebuilts/sdk/renderscript/lib/$(TARGET_ARCH)/libcomp
 
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
-$(eval include vendor/AOSP/sepolicy/sepolicy.mk)
+$(eval include vendor/aosp/sepolicy/sepolicy.mk)
 
 include $(BUILD_SYSTEM)/dumpvar.mk
