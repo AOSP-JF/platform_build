@@ -12,9 +12,9 @@ BUILD() {
     . build/envsetup.sh
     lunch aosp_jflte-userdebug
     if [ -n "$LOG" ]; then
-        make -j$CPU otapackage
+        mka -j$CPU otapackage
     else
-        make -j$CPU otapackage &>build.log | tail -f build.log
+        mka -j$CPU otapackage &>build.log | tail -f build.log
     fi
     return
 }
