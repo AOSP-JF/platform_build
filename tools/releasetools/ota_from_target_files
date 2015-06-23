@@ -585,10 +585,8 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     system_diff = common.BlockDifference("system", system_tgt, src=None)
     system_diff.WriteScript(script, output_zip)
   else:
-    script.UnpackPackageFile("system/bin/format.sh", "/tmp/install/format.sh");
-    script.AppendExtra("set_metadata_recursive("/tmp/install", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755);")
     script.Print("Formatting /system...")
-    script.AppendExtra("run_program(\"/tmp/format.sh\");")
+    script.AppendExtra("run_program(\"/tmp/install/bin/format.sh\");")
     script.Print("Mounting /system...")
     script.Mount("/system")
     script.Print("Installing...")
