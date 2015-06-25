@@ -572,6 +572,21 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Target: %s" % CalculateFingerprint(
       oem_props, oem_dict, OPTIONS.info_dict))
 
+  script.Print("   __  ____  __   ____  ____ ")
+  script.Print(" _(  )(  __)(  ) (_  _)(  __)")
+  script.Print("/ \) \ )  _)/ (_/\ )(   ) _)")
+  script.Print("\____/(__)  \____/(__) (____)")
+  script.Print("")
+  script.Print(" ____  ____  _  _   ___  __   __ _ ")
+  script.Print("(    \(  __)/ )( \ / __)/  \ (  ( )")
+  script.Print(" ) D ( ) _) \ \/ /( (__(  O )/    /")
+  script.Print("(____/(____) \__/  \___)\__/ \_)__)")
+  script.Print(" ")
+  script.Print("Welcome to Android M Preview")
+  script.Print(" ")
+  script.Print("Based on the Google AOSP code")
+  script.Print(" ")
+  script.AppendExtra("sleep (2);")
   device_specific.FullOTA_InstallBegin()
 
   system_progress = 0.75
