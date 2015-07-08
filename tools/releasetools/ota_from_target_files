@@ -574,9 +574,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.Print("Lead Developer: -+BB+-")
   script.Print("")
   script.AppendExtra("sleep (2);")
-  script.AppendExtra('ifelse(is_mounted("/system"), unmount("/system"));')
-  script.AppendExtra('package_extract_file("system/bin/format.sh", "/tmp/format.sh");')
-  script.AppendExtra('set_metadata("/tmp/format.sh", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755");')
+  script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
   system_progress = 0.75
@@ -662,7 +660,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   if OPTIONS.extra_script is not None:
     script.AppendExtra(OPTIONS.extra_script)
 
-  script.AppendExtra("delete(\"/system/bin/format.sh\");")
   script.Print("Installation complete!")
   script.UnmountAll()
 
