@@ -673,7 +673,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   script.Print("Cleaning up...");
   script.AppendExtra('delete_recursive("/tmp/supersu");')
-  script.AppendExtra('delete_recursive("/system/supersu");')
 
   script.Print("Installation complete!")
   
