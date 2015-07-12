@@ -1508,7 +1508,7 @@ def main(argv):
     elif o in ("--no_fallback_to_full",):
       OPTIONS.fallback_to_full = False
     elif o in ("--override_device"):
-      OPTIONS.override_device = jflte, jfltexx, i9505, GT-I9505, jgedlte, i9505g, GT-I9505G, jfltevzw, jfltespr, jflterefreshspr, jfltetmo, jfltecri, jfltecsp, jflteatt, jfltecan, jflteusc, jfltezm
+      OPTIONS.override_device = a
     elif o in ("--override_prop"):
       OPTIONS.override_prop = bool(a.lower() == 'true')
     else:
