@@ -576,7 +576,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("sleep (2);")
   script.AppendExtra('ifelse(is_mounted("/system"), unmount("/system"));')
   script.AppendExtra('package_extract_file("system/bin/format.sh", "/tmp/format.sh");')
-  script.AppendExtra('set_metadata("/tmp/format.sh", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0755");')
+  script.AppendExtra('set_metadata("/tmp/format.sh", "uid", 0, "gid", 0, "fmode", 0755");')
   device_specific.FullOTA_InstallBegin()
 
   system_progress = 0.75
@@ -605,7 +605,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     system_diff.WriteScript(script, output_zip)
   else:
     script.Print("Formatting /system...")
-    script.AppendExtra('run_program("/tmp/install/bin/format.sh");')
+    script.AppendExtra('run_program("/tmp/format.sh");')
     script.Print("Mounting /system...")
     script.Mount("/system")
     script.Print("Installing...")
