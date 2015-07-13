@@ -668,8 +668,10 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra('run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "null", "1", "/tmp/supersu/supersu.zip");')
 
   script.Print("Cleaning up...");
+  script.Mount("/system")
   script.AppendExtra('delete_recursive("/tmp/supersu");')
   script.AppendExtra('delete_recursive("/system/supersu");')
+  script.Unmount("/system");
 
   script.Print("Installation complete!")
   
